@@ -88,7 +88,7 @@ table {
     width: 100%;
     background-size: cover;
     background-position: center;
-    background-image: url(/image/header_background.jpg);
+    background-image: url(image/header_background.jpg);
     background-repeat: no-repeat;
 }
 
@@ -697,4 +697,5 @@ table {
         transform: translateY(0);
         opacity: 1;
     }
+
 }
