@@ -1,0 +1,581 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Удобный размер шрифта и высота строки */
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+}
+
+/* Основные теги */
+body {
+    min-height: 100vh;
+    font-family: "Raleway", sans-serif;
+    background-color: #fff;
+    color: #222;
+}
+
+/* Заголовки без дефолтных margin */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+/* Убираем маркеры у списков */
+ul, ol {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Ссылки */
+a {
+    color: inherit;
+    text-decoration: none;
+
+}
+
+/* Картинки */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Формы */
+input, button, textarea, select {
+    font: inherit;
+}
+
+/* Таблицы */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.conteiner {
+    width: 1296px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button {
+    cursor: pointer;
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.button:hover {
+    filter: brightness(0.7);
+    transform: translateY(-2px);
+}
+
+/*!------------------------------------------------------------------------------------------------------*/
+
+
+.main {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+}
+
+.title_main {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-weight: 700;
+    font-size: 20px;
+    color: black;
+}
+
+.title_span {
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #B59571;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: min(120px);
+    height: 100vh;
+    background: #333333;
+}
+
+.sidebar_logo {
+    margin: 30px auto 20px auto ;
+    width: 80px;
+    height: 46px;
+}
+
+.sidebar_menu {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 7px;
+    width: 100%;
+}
+
+.sidebar_byrger_menu {
+    width: 34px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    width: 100%;
+    margin-left: 47px;
+    cursor: pointer;
+}
+
+
+.sidebar_menu_span.one {
+    width: 17px;
+}
+
+.sidebar_menu_span.two {
+    width: 34px;
+}
+
+.sidebar_menu_span.three {
+    width: 24px;
+}
+
+.sidebar_menu_span {
+    display: block;
+    height: 4px;
+    border-radius: 2px;
+    background: #B59571;
+    transition: width 0.4s ease;
+}
+
+.sidebar_menu_span:hover {
+    width: 34px;
+}
+
+.sidebar_contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+
+.sidebar_contact img {
+    width: auto;
+}
+
+.menu_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5 ease;
+    z-index: 999;
+    pointer-events: none;
+}
+
+.menu_overlay.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.menu_header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 30px;
+    gap: 30px;
+}
+
+.menu_overlay_close {
+    cursor: pointer;
+}
+
+.menu__nav {
+    padding-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.menu__nav_line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 48px;
+    color: #fff;
+}
+
+.menu_nav_button {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 237px;
+    height: 74px;
+    background-color: #B59571;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 140%;
+    color: white;
+}
+
+.menu__nav_contact {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding-top: 150px;
+}
+
+
+
+
+.main_main {
+    padding-top: 60px;
+}
+
+.main_main_list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.main_main_list a {
+    font-weight: 400;
+    font-size: 16px;
+    color: #333333;
+}
+
+.main_list_span {
+    display: none;
+    width: 64px;
+    height: 3px;
+    background-color: #B59571;
+}
+
+.activ {
+    display: block;
+}
+
+
+
+.main_main_grup {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-top: 60px;
+    gap: 24px;
+}
+
+.main_grup_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.main_grup_card_title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 140%;
+    color: #333333;
+    text-align: center;
+    width: 246px;
+}
+
+.main_grup_card_content {
+    display: flex;
+    width: 246px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main_grup_card_content p {
+    font-weight: 700;
+    font-size: 32px;
+    color: #333333;
+}
+
+.main_card_content_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 113px;
+    height: 42px;
+    background-color: #B59571;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+}
+
+.contact {
+    padding-top: 150px;
+}
+
+.contact_content {
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.contact_content_time {
+    display: grid;
+    grid-template-columns: repeat(2, 196px);
+    column-gap: 24px;
+    row-gap: 50px;
+}
+
+.contact_time_card_title {
+    display: flex;
+    align-items: end;
+    gap: 15px;
+}
+
+.contact_time_card_title h1{
+    font-weight: 700;
+    font-size: 64px;
+    color: #B59571;
+}
+
+.contact_time_card_title h2{
+    font-weight: 700;
+    font-size: 32px;
+    color: #B59571;
+}
+
+.contact_time_card_text {
+    padding-top: 15px;
+    font-weight: 400;
+    font-size: 18px;
+    color: black;
+}
+
+.contact_content_map {
+    padding-left: 24px;
+    position: relative;
+}
+
+.contact_map_information {
+    width: 416px;
+    height: 349px;
+    background: #5b5b5b;
+    position: absolute;
+    z-index: 2;
+    top: -170px;
+}
+
+.contact_map {
+    position: absolute;
+    z-index: 1;
+    background-image: url(/image/map.jpg);
+    left: 110px;
+    width: 746px;
+    height: 450px;
+    top: -230px;
+}
+
+.contact_map_information_list {
+    padding-top: 40px;
+    padding-left: 40px;
+}
+
+.contact_map_information_list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact_list_line {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+}
+
+.contact_list_line img {
+    padding-right: 20px;
+}
+
+.contact_line_title {
+    font-weight: 700;
+    font-size: 20px;
+    color: #fff;
+}
+
+.contact_list_line-data {
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff;
+}
+
+.contact_map_information_grup {
+    display: flex;
+    gap: 20px;
+    padding-top: 30px;
+    padding-left: 40px;
+}
+
+.contact_information_grup_button {
+    width: 145px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #B59571;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+}
+
+.contact_information_grup_link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    width: 143px;
+    height: 42px; 
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+}
+
+
+
+.footer {
+    margin-top: 160px;
+    height: 120px;
+    background: #333333;
+}
+
+.footer_content {
+    height: 120px;
+}
+
+.footer_content_list {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer_content_list li {
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+}
+
+.footer_list_cards {
+    width: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.booking_mobal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: opacity 0.3 ease;
+    opacity: 0;
+}
+
+.booking_mobal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.booking_content {
+    width: 416px;
+    height: 572px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: #333333;
+    animation: fadeInUp 0.4s ease;
+}
+
+.menu_booking_close {
+    margin-top: 20px;
+    margin-left: 356px;
+    cursor: pointer;
+}
+
+.booking_content h1 {
+    font-weight: 700;
+    font-size: 20px;
+    color: #fff;
+    padding-top: 39px;
+}
+
+.booking_content_information {
+    width: 296px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 40px;
+}
+
+.booking_content_information input {
+    width: 100%;
+    height: 52px;
+    border: 1px solid #808D96;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+    background: #333333;
+}
+
+.booking_information_grup {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.booking_content_button {
+    background-color: #B59571;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+@keyframes fadeInUp {
+    form {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
